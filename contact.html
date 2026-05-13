@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ari's Closet - Contact</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .site-header {
+            background-color: #7B4F9E;
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .site-header .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .site-header nav a {
+            color: #F3F0F9;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .site-header nav a:hover { text-decoration: underline; }
+
+        .page-banner {
+            background-color: #F3F0F9;
+            padding: 2rem;
+            border-bottom: 2px solid #7B4F9E;
+        }
+        .page-banner h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: #7B4F9E;
+        }
+
+        .content-wrapper {
+            max-width: 700px;
+            margin: 3rem auto;
+            padding: 0 1.5rem 5rem;
+        }
+
+        .intro {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-bottom: 3rem;
+        }
+        .contact-card {
+            background-color: #F3F0F9;
+            border-radius: 12px;
+            padding: 1.75rem 1.5rem;
+        }
+        .contact-card .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.6rem;
+        }
+        .contact-card h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #7B4F9E;
+            margin-bottom: 0.4rem;
+        }
+        .contact-card p {
+            font-size: 0.9rem;
+            color: #444;
+            line-height: 1.5;
+        }
+        .contact-card a {
+            color: #7B4F9E;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .contact-card a:hover { text-decoration: underline; }
+
+        .response-note {
+            background-color: #ffffff;
+            border-left: 3px solid #7B4F9E;
+            padding: 1rem 1.25rem;
+            font-size: 0.875rem;
+            color: #666;
+            line-height: 1.6;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .site-footer {
+            background-color: #7B4F9E;
+            color: #F3F0F9;
+            text-align: center;
+            padding: 1.25rem;
+            font-size: 0.85rem;
+        }
+        .site-footer a {
+            color: #F3F0F9;
+            text-decoration: underline;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .site-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+            .site-header nav a:first-child { margin-left: 0; }
+            .contact-cards { grid-template-columns: 1fr; }
+            .content-wrapper { padding: 0 1rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="logo">Ari's Closet</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="page-banner">
+    <h1>Contact Us</h1>
+</div>
+
+<div class="content-wrapper">
+
+    <p class="intro">Have a question, feedback, or need support with Ari's Closet? We'd love to hear from you. Reach out using any of the methods below.</p>
+
+    <div class="contact-cards">
+        <div class="contact-card">
+            <div class="icon">✉️</div>
+            <h3>Email</h3>
+            <p><a href="mailto:support@ariscloset.app">support@ariscloset.app</a></p>
+        </div>
+        <div class="contact-card">
+            <div class="icon">📞</div>
+            <h3>Phone</h3>
+            <p><a href="tel:5099061788">509-906-1788</a></p>
+        </div>
+        <div class="contact-card">
+            <div class="icon">📬</div>
+            <h3>Mailing Address</h3>
+            <p>Rose V LLC<br>P.O. Box 421<br>Antioch, TN 37011<br>United States</p>
+        </div>
+        <div class="contact-card">
+            <div class="icon">🕐</div>
+            <h3>Support Hours</h3>
+            <p>We typically respond within 1–2 business days.</p>
+        </div>
+    </div>
+
+    <div class="response-note">
+        For the fastest response, email us at <a href="mailto:support@ariscloset.app">support@ariscloset.app</a> with a brief description of your question or issue. For subscription or billing questions, please include your Apple ID email so we can look up your account.
+    </div>
+
+</div>
+
+<footer class="site-footer">
+    <p>&copy; 2026 Rose V LLC &nbsp;|&nbsp;
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Contact</a>
+    </p>
+</footer>
+
+</body>
+</html>

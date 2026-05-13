@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ari's Closet - AI-Powered Wardrobe Management</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        /* Header */
+        .site-header {
+            background-color: #7B4F9E;
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .site-header .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .site-header nav a {
+            color: #F3F0F9;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .site-header nav a:hover { text-decoration: underline; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #7B4F9E 0%, #6B8DDB 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 5rem 2rem 4rem;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.01em;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            font-weight: 300;
+            max-width: 540px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+            opacity: 0.95;
+        }
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.35);
+            border-radius: 2rem;
+            padding: 0.35rem 1rem;
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .app-store-btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #7B4F9E;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.85rem 2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+        .app-store-btn:hover { opacity: 0.88; }
+        .app-store-btn span {
+            font-size: 0.75rem;
+            display: block;
+            font-weight: 300;
+            opacity: 0.75;
+            margin-bottom: 0.1rem;
+        }
+
+        /* Features */
+        .features {
+            background-color: #F3F0F9;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .features h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: #7B4F9E;
+            margin-bottom: 0.5rem;
+        }
+        .features .subtitle {
+            font-size: 0.95rem;
+            color: #777;
+            margin-bottom: 3rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .feature-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: left;
+            box-shadow: 0 2px 12px rgba(123, 79, 158, 0.08);
+        }
+        .feature-card .icon {
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .feature-card h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 0.4rem;
+        }
+        .feature-card p {
+            font-size: 0.875rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Pricing teaser */
+        .pricing {
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .pricing h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: #7B4F9E;
+            margin-bottom: 0.5rem;
+        }
+        .pricing .subtitle {
+            font-size: 0.95rem;
+            color: #777;
+            margin-bottom: 2.5rem;
+        }
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+        }
+        .pricing-card {
+            border: 2px solid #F3F0F9;
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: left;
+        }
+        .pricing-card.featured {
+            border-color: #7B4F9E;
+            background-color: #F3F0F9;
+        }
+        .pricing-card .plan-name {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #7B4F9E;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .pricing-card .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 0.25rem;
+        }
+        .pricing-card .price span {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem;
+            color: #777;
+            font-weight: 300;
+        }
+        .pricing-card .desc {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.6;
+            margin-top: 0.75rem;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, #7B4F9E 0%, #6B8DDB 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .cta p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #7B4F9E;
+            color: #F3F0F9;
+            text-align: center;
+            padding: 1.25rem;
+            font-size: 0.85rem;
+        }
+        .site-footer a {
+            color: #F3F0F9;
+            text-decoration: underline;
+            margin: 0 0.5rem;
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .site-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+            .site-header nav a:first-child { margin-left: 0; }
+            .hero h1 { font-size: 2.25rem; }
+            .pricing-cards { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="logo">Ari's Closet</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-badge">Available on iOS</div>
+    <h1>Your Wardrobe,<br>Reimagined.</h1>
+    <p>Ari's Closet uses AI to help you organize your clothing, discover new outfits, and dress with confidence every day.</p>
+    <a href="https://apps.apple.com" class="app-store-btn">
+        <span>Download on the</span>
+        App Store
+    </a>
+</section>
+
+<!-- Features -->
+<section class="features">
+    <h2>Everything your closet needs</h2>
+    <p class="subtitle">Smart tools to make getting dressed effortless</p>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="icon">👗</div>
+            <h3>Smart Wardrobe</h3>
+            <p>Photograph your clothing and let AI automatically detect, categorize, and catalog every item.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">✨</div>
+            <h3>AI Outfit Recommendations</h3>
+            <p>Get personalized outfit suggestions based on weather, occasion, and your personal style preferences.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">💜</div>
+            <h3>Save Your Favorites</h3>
+            <p>Build a collection of your best looks and revisit them anytime — no more forgetting great combinations.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🔄</div>
+            <h3>Mix &amp; Match</h3>
+            <p>Swap individual items in any outfit manually or let AI suggest alternatives from your wardrobe.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing">
+    <h2>Simple, honest pricing</h2>
+    <p class="subtitle">Start free, upgrade when you're ready</p>
+    <div class="pricing-cards">
+        <div class="pricing-card">
+            <div class="plan-name">Free</div>
+            <div class="price">$0</div>
+            <p class="desc">1 outfit per day, up to 30 wardrobe items, 5 saved favorites, and 3 AI detections per month.</p>
+        </div>
+        <div class="pricing-card featured">
+            <div class="plan-name">Premium</div>
+            <div class="price">$4.99 <span>/ month</span></div>
+            <p class="desc">Unlimited outfits, unlimited wardrobe items, unlimited AI detections, and full access to all features. Also available at $39.99/year.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Ready to transform your closet?</h2>
+    <p>Download Ari's Closet today and start dressing smarter.</p>
+    <a href="https://apps.apple.com" class="app-store-btn">
+        <span>Download on the</span>
+        App Store
+    </a>
+</section>
+
+<footer class="site-footer">
+    <p>&copy; 2026 Rose V LLC &nbsp;|&nbsp;
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Contact</a>
+    </p>
+</footer>
+
+</body>
+</html>
