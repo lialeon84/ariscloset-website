@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ari's Closet - Reset Password</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .site-header {
+            background-color: #7B4F9E;
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .site-header .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .site-header nav a {
+            color: #F3F0F9;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .site-header nav a:hover { text-decoration: underline; }
+
+        .page-banner {
+            background-color: #F3F0F9;
+            padding: 2rem;
+            border-bottom: 2px solid #7B4F9E;
+        }
+        .page-banner h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: #7B4F9E;
+        }
+
+        .content-wrapper {
+            max-width: 520px;
+            margin: 3rem auto;
+            padding: 0 1.5rem 5rem;
+        }
+
+        .intro {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .reset-card {
+            background-color: #F3F0F9;
+            border-radius: 12px;
+            padding: 2rem 1.75rem;
+        }
+
+        .field-label {
+            display: block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            color: #7B4F9E;
+            margin-bottom: 0.5rem;
+        }
+
+        .input-wrap {
+            position: relative;
+            margin-bottom: 1.25rem;
+        }
+
+        .input-wrap input {
+            width: 100%;
+            padding: 0.85rem 3.25rem 0.85rem 0.95rem;
+            border: 1px solid #D9CFE6;
+            border-radius: 8px;
+            background-color: #ffffff;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+            outline: none;
+            transition: border-color 0.15s ease;
+        }
+        .input-wrap input:focus {
+            border-color: #7B4F9E;
+        }
+
+        .toggle-btn {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #7B4F9E;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0.4rem 0.7rem;
+        }
+        .toggle-btn:hover { text-decoration: underline; }
+
+        .hint {
+            font-size: 0.8rem;
+            color: #777;
+            line-height: 1.5;
+            margin: -0.75rem 0 1.25rem 0.1rem;
+        }
+
+        .primary-btn {
+            width: 100%;
+            background-color: #7B4F9E;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.95rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.15s ease;
+        }
+        .primary-btn:hover:not(:disabled) {
+            background-color: #6A4188;
+        }
+        .primary-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .message {
+            margin-top: 1rem;
+            padding: 0.75rem 0.95rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            display: none;
+            background-color: #ffffff;
+        }
+        .message.show { display: block; }
+        .message.success {
+            border-left: 3px solid #4CAF50;
+            color: #2E7D32;
+        }
+        .message.error {
+            border-left: 3px solid #E53935;
+            color: #C62828;
+        }
+
+        .state-block {
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+        .state-block h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: #7B4F9E;
+            margin-bottom: 0.75rem;
+        }
+        .state-block p {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .site-footer {
+            background-color: #7B4F9E;
+            color: #F3F0F9;
+            text-align: center;
+            padding: 1.25rem;
+            font-size: 0.85rem;
+        }
+        .site-footer a {
+            color: #F3F0F9;
+            text-decoration: underline;
+            margin: 0 0.5rem;
+        }
+
+        @media (max-width: 600px) {
+            .site-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+            .site-header nav a:first-child { margin-left: 0; }
+            .content-wrapper { padding: 0 1rem 3rem; margin: 2rem auto; }
+            .reset-card { padding: 1.5rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="logo">Ari's Closet</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="page-banner">
+    <h1>Reset Password</h1>
+</div>
+
+<div class="content-wrapper">
+
+    <p class="intro">Choose a new password for your Ari's Closet account.</p>
+
+    <div class="reset-card">
+
+        <!-- The form (visible by default; hidden if no valid recovery session) -->
+        <div id="form-section">
+            <label class="field-label" for="new-password">New Password</label>
+            <div class="input-wrap">
+                <input type="password" id="new-password" autocomplete="new-password" placeholder="At least 8 characters">
+                <button type="button" class="toggle-btn" data-target="new-password">Show</button>
+            </div>
+
+            <label class="field-label" for="confirm-password">Confirm New Password</label>
+            <div class="input-wrap">
+                <input type="password" id="confirm-password" autocomplete="new-password" placeholder="Re-enter your new password">
+                <button type="button" class="toggle-btn" data-target="confirm-password">Show</button>
+            </div>
+
+            <p class="hint">Password must be at least 8 characters long.</p>
+
+            <button type="button" class="primary-btn" id="submit-btn">Reset Password</button>
+
+            <div class="message" id="form-message"></div>
+        </div>
+
+        <!-- Shown after successful password reset -->
+        <div id="success-section" class="state-block" style="display:none;">
+            <h2>Password Updated</h2>
+            <p>Your password has been reset successfully.</p>
+            <p>You can now return to the Ari's Closet app and sign in with your new password.</p>
+        </div>
+
+        <!-- Shown if the link is invalid or expired -->
+        <div id="invalid-section" class="state-block" style="display:none;">
+            <h2>Link Expired or Invalid</h2>
+            <p>This password reset link is no longer valid. Reset links expire after 1 hour.</p>
+            <p>Please open the Ari's Closet app and tap "Forgot Password?" again to request a new link.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<footer class="site-footer">
+    <p>&copy; 2026 Rose V LLC &nbsp;|&nbsp;
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Contact</a>
+    </p>
+</footer>
+
+<!-- Supabase JS client (loaded from CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/[email protected]/dist/umd/supabase.min.js"></script>
+
+<script>
+    // -----------------------------------------------------------------
+    // Ari's Closet password reset handler
+    //
+    // FLOW:
+    //   1. User taps reset link in email → lands here with a recovery
+    //      token in the URL hash (e.g. #access_token=...&type=recovery).
+    //   2. Supabase JS client auto-parses the hash and creates a
+    //      temporary recovery session.
+    //   3. User enters a new password → we call supabase.auth.updateUser()
+    //      which uses the recovery session to set the new password.
+    //   4. On success, show confirmation. On invalid/expired link,
+    //      show the invalid state.
+    //
+    // BEFORE DEPLOYING: replace the two placeholders below with your
+    // real Supabase project values. The anon key is safe to expose
+    // publicly (it is already in the iOS app bundle). Do NOT use the
+    // service_role key here.
+    // -----------------------------------------------------------------
+
+    const SUPABASE_URL      = '__SUPABASE_URL__';      // e.g. https://abcd1234.supabase.co
+    const SUPABASE_ANON_KEY = '__SUPABASE_ANON_KEY__'; // public anon key from Supabase dashboard
+
+    const formSection     = document.getElementById('form-section');
+    const successSection  = document.getElementById('success-section');
+    const invalidSection  = document.getElementById('invalid-section');
+    const newPassword     = document.getElementById('new-password');
+    const confirmPassword = document.getElementById('confirm-password');
+    const submitBtn       = document.getElementById('submit-btn');
+    const formMessage     = document.getElementById('form-message');
+
+    const showForm    = () => { formSection.style.display = 'block'; successSection.style.display = 'none'; invalidSection.style.display = 'none'; };
+    const showSuccess = () => { formSection.style.display = 'none';  successSection.style.display = 'block'; invalidSection.style.display = 'none'; };
+    const showInvalid = () => { formSection.style.display = 'none';  successSection.style.display = 'none';  invalidSection.style.display = 'block'; };
+
+    const showMessage = (text, type) => {
+        formMessage.textContent = text;
+        formMessage.className = 'message show ' + type;
+    };
+    const clearMessage = () => {
+        formMessage.textContent = '';
+        formMessage.className = 'message';
+    };
+
+    // Initialize Supabase client. The client reads the recovery token
+    // from the URL fragment automatically.
+    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+        auth: {
+            autoRefreshToken: false,
+            persistSession: false,
+            detectSessionInUrl: true,
+            flowType: 'implicit'
+        }
+    });
+
+    // Wait briefly for Supabase to process the URL hash, then check
+    // whether we have a valid recovery session.
+    (async function checkRecoverySession() {
+        await new Promise(resolve => setTimeout(resolve, 200));
+
+        const { data, error } = await supabase.auth.getSession();
+
+        if (error || !data || !data.session) {
+            // No valid recovery session — link is invalid, expired, or
+            // the page was opened directly without a reset link.
+            showInvalid();
+            return;
+        }
+
+        showForm();
+    })();
+
+    // Show/hide password toggle buttons
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = document.getElementById(btn.dataset.target);
+            if (target.type === 'password') {
+                target.type = 'text';
+                btn.textContent = 'Hide';
+            } else {
+                target.type = 'password';
+                btn.textContent = 'Show';
+            }
+        });
+    });
+
+    // Handle reset submission
+    submitBtn.addEventListener('click', async () => {
+        clearMessage();
+
+        const pw1 = newPassword.value;
+        const pw2 = confirmPassword.value;
+
+        if (!pw1 || !pw2) {
+            showMessage('Please fill in both password fields.', 'error');
+            return;
+        }
+        if (pw1.length < 8) {
+            showMessage('Password must be at least 8 characters long.', 'error');
+            return;
+        }
+        if (pw1 !== pw2) {
+            showMessage('Passwords do not match. Please try again.', 'error');
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Resetting...';
+
+        const { error } = await supabase.auth.updateUser({ password: pw1 });
+
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Reset Password';
+
+        if (error) {
+            // Generic error message — don't expose internal details.
+            showMessage('Something went wrong. Please request a new reset link and try again.', 'error');
+            return;
+        }
+
+        // Sign out the recovery session so the leftover token can't be
+        // reused. User signs in fresh in the app with new password.
+        try { await supabase.auth.signOut(); } catch (_) { /* ignore */ }
+
+        showSuccess();
+    });
+
+    // Allow Enter key to submit from either password field
+    [newPassword, confirmPassword].forEach(input => {
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') submitBtn.click();
+        });
+    });
+</script>
+
+</body>
+</html>
