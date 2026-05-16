@@ -318,7 +318,7 @@
 
     // Initialize Supabase client. The client reads the recovery token
     // from the URL fragment automatically.
-    const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    const sbClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
         auth: {
             autoRefreshToken: false,
             persistSession: false,
@@ -332,7 +332,7 @@
     (async function checkRecoverySession() {
         await new Promise(resolve => setTimeout(resolve, 200));
 
-        const { data, error } = await supabase.auth.getSession();
+        const { data, error } = await sbClient.auth.getSession();
 
         if (error || !data || !data.session) {
             // No valid recovery session — link is invalid, expired, or
@@ -348,12 +348,14 @@
     document.querySelectorAll('.toggle-btn').forEach(btn => {
         btn.addEventListener('click', () => {
             const target = document.getElementById(btn.dataset.target);
+            
             if (target.type === 'password') {
                 target.type = 'text';
                 btn.textContent = 'Hide';
             } else {
                 target.type = 'password';
                 btn.textContent = 'Show';
+                console.log(btn);
             }
         });
     });
@@ -381,7 +383,7 @@
         submitBtn.disabled = true;
         submitBtn.textContent = 'Resetting...';
 
-        const { error } = await supabase.auth.updateUser({ password: pw1 });
+        const { error } = await sbClient.auth.updateUser({ password: pw1 });
 
         submitBtn.disabled = false;
         submitBtn.textContent = 'Reset Password';
@@ -394,7 +396,7 @@
 
         // Sign out the recovery session so the leftover token can't be
         // reused. User signs in fresh in the app with new password.
-        try { await supabase.auth.signOut(); } catch (_) { /* ignore */ }
+        try { await sbClient.auth.signOut(); } catch (_) { /* ignore */ }
 
         showSuccess();
     });
