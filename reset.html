@@ -198,6 +198,24 @@
             .content-wrapper { padding: 0 1rem 3rem; margin: 2rem auto; }
             .reset-card { padding: 1.5rem 1.25rem; }
         }
+        /* Password match indicator */
+        .match-hint {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            margin: -0.75rem 0 1.25rem 0.1rem;
+        }
+        .match-hint.match { color: #2E7D32; }
+        .match-hint.no-match { color: #C62828; }
+        .match-hint.empty { color: #777; }
+
+        /* Footer pinned to bottom */
+        html, body { height: 100%; }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .content-wrapper { flex: 1; }
     </style>
 </head>
 <body>
@@ -236,7 +254,7 @@
                 <button type="button" class="toggle-btn" data-target="confirm-password">Show</button>
             </div>
 
-            <p class="hint">Password must be at least 8 characters long.</p>
+            <p class="match-hint empty" id="match-hint">Min. 8 characters, one capital letter, one special character.</p>
 
             <button type="button" class="primary-btn" id="submit-btn">Reset Password</button>
 
@@ -371,8 +389,16 @@
             showMessage('Please fill in both password fields.', 'error');
             return;
         }
-        if (pw1.length < 8) {
+       if (pw1.length < 8) {
             showMessage('Password must be at least 8 characters long.', 'error');
+            return;
+        }
+        if (!/[A-Z]/.test(pw1)) {
+            showMessage('Password must contain at least one capital letter.', 'error');
+            return;
+        }
+        if (!/[^A-Za-z0-9]/.test(pw1)) {
+            showMessage('Password must contain at least one special character (e.g. !, @, #).', 'error');
             return;
         }
         if (pw1 !== pw2) {
@@ -388,9 +414,12 @@
         submitBtn.disabled = false;
         submitBtn.textContent = 'Reset Password';
 
-        if (error) {
-            // Generic error message — don't expose internal details.
-            showMessage('Something went wrong. Please request a new reset link and try again.', 'error');
+       if (error) {
+            if (error.status === 429 || (error.message && error.message.toLowerCase().includes('rate'))) {
+                showMessage('Too many reset attempts. Please wait until tomorrow and try again.', 'error');
+            } else {
+                showMessage('Something went wrong. Please request a new reset link and try again.', 'error');
+            }
             return;
         }
 
@@ -399,6 +428,21 @@
         try { await sbClient.auth.signOut(); } catch (_) { /* ignore */ }
 
         showSuccess();
+    });
+
+    // Password match indicator
+    confirmPassword.addEventListener('input', () => {
+        const hint = document.getElementById('match-hint');
+        if (!confirmPassword.value) {
+            hint.textContent = 'Min. 8 characters, one capital letter, one special character.';
+            hint.className = 'match-hint empty';
+        } else if (confirmPassword.value === newPassword.value) {
+            hint.textContent = '✓ Passwords match';
+            hint.className = 'match-hint match';
+        } else {
+            hint.textContent = '✗ Passwords do not match';
+            hint.className = 'match-hint no-match';
+        }
     });
 
     // Allow Enter key to submit from either password field
