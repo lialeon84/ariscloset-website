@@ -414,14 +414,23 @@
         submitBtn.disabled = false;
         submitBtn.textContent = 'Reset Password';
 
-       if (error) {
-            if (error.status === 429 || (error.message && error.message.toLowerCase().includes('rate'))) {
-                showMessage('Too many reset attempts. Please wait until tomorrow and try again.', 'error');
-            } else {
-                showMessage('Something went wrong. Please request a new reset link and try again.', 'error');
-            }
-            return;
-        }
+        if (error) {
+                    const msg = (error.message || '').toLowerCase();
+
+                    if (error.status === 429 || msg.includes('rate')) {
+                        showMessage('Too many reset attempts. Please wait until tomorrow and try again.', 'error');
+                    } else if (error.code === 'same_password' || msg.includes('different from the old password') || msg.includes('should be different')) {
+                        showMessage('Please choose a password different from your current one.', 'error');
+                    } else if (msg.includes('expired') || msg.includes('invalid token') || msg.includes('jwt')) {
+                        showMessage('This reset link has expired or is invalid. Please request a new one.', 'error');
+                    } else if (msg.includes('network') || msg.includes('fetch') || msg.includes('failed to fetch')) {
+                        showMessage('Connection problem. Please check your internet and try again.', 'error');
+                    } else {
+                        console.error('[reset password]', error);
+                        showMessage('Something went wrong. Please request a new reset link and try again.', 'error');
+                    }
+                    return;
+                }
 
         // Sign out the recovery session so the leftover token can't be
         // reused. User signs in fresh in the app with new password.

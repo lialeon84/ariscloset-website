@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ari's Closet - Email Verified</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        .site-header {
+            background-color: #7B4F9E;
+            padding: 1.25rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .site-header .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .site-header nav a {
+            color: #F3F0F9;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .site-header nav a:hover { text-decoration: underline; }
+
+        .page-banner {
+            background-color: #F3F0F9;
+            padding: 2rem;
+            border-bottom: 2px solid #7B4F9E;
+        }
+        .page-banner h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: #7B4F9E;
+        }
+
+        .content-wrapper {
+            max-width: 520px;
+            margin: 3rem auto;
+            padding: 0 1.5rem 5rem;
+            flex: 1;
+        }
+
+        .verify-card {
+            background-color: #F3F0F9;
+            border-radius: 12px;
+            padding: 2rem 1.75rem;
+            text-align: center;
+        }
+
+        .checkmark {
+            font-size: 3rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .verify-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #7B4F9E;
+            margin-bottom: 1rem;
+        }
+
+        .verify-card p {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+
+        .verify-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .app-badge {
+            display: inline-block;
+            margin-top: 1.5rem;
+            background-color: #7B4F9E;
+            color: #ffffff;
+            border-radius: 8px;
+            padding: 0.85rem 1.75rem;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.15s ease;
+        }
+        .app-badge:hover {
+            background-color: #6A4188;
+        }
+
+        .site-footer {
+            background-color: #7B4F9E;
+            color: #F3F0F9;
+            text-align: center;
+            padding: 1.25rem;
+            font-size: 0.85rem;
+        }
+        .site-footer a {
+            color: #F3F0F9;
+            text-decoration: underline;
+            margin: 0 0.5rem;
+        }
+
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        @media (max-width: 600px) {
+            .site-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+            .site-header nav a:first-child { margin-left: 0; }
+            .content-wrapper { padding: 0 1rem 3rem; margin: 2rem auto; }
+            .verify-card { padding: 1.5rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="index.html" class="logo">Ari's Closet</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<div class="page-banner">
+    <h1>Email Verified</h1>
+</div>
+
+<div class="content-wrapper">
+    <div class="verify-card">
+        <div class="checkmark">✅</div>
+        <h2>You're all set!</h2>
+        <p>Your email address has been verified successfully.</p>
+        <p>Open the Ari's Closet app to finish setting up your profile and start building your wardrobe.</p>
+        <a href="ariscloset://" class="app-badge">Open Ari's Closet</a>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <p>&copy; 2026 Rose V LLC &nbsp;|&nbsp;
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Contact</a>
+    </p>
+</footer>
+
+</body>
+</html>
