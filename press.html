@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press · Ari's Closet</title>
+<meta name="description" content="Press kit and media resources for Ari's Closet, an iOS app for wardrobe management and outfit planning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #7B4F9E;
+    --purple-dark: #5A3878;
+    --purple-light: #B89BCF;
+    --lavender-bg: #F3F0F9;
+    --lavender-card: #EAE3F2;
+    --cream: #FAF8F3;
+    --text: #2C2535;
+    --text-muted: #6B5C77;
+    --border: #DBD0E5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: #FFFFFF;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* HEADER (matches your existing site bar) */
+  .site-header {
+    background: var(--purple);
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header .brand {
+    color: #FFFFFF;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.75rem;
+    text-decoration: none;
+  }
+  .site-header .brand::first-letter {
+    font-family: 'Parisienne', cursive;
+    font-size: 1.6em;
+    padding-right: 0.05em;
+    color: #ffffff;
+    vertical-align: baseline;
+  }
+  .site-header nav a {
+    color: #F3F0F9;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 0.9rem;
+    /* font-weight: 400; */
+  }
+  .site-header nav a:hover { opacity: 0.75; }
+
+  /* HERO */
+  .hero {
+    background: var(--lavender-bg);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    color: var(--purple-dark);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .hero h1::first-letter {
+    font-family: 'Parisienne', cursive;
+    font-size: 1.4em;
+    padding-right: 0.05em;
+  }
+  .hero-sub {
+    max-width: 580px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* SECTION */
+  section {
+    padding: 4rem 2rem;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  section.tinted {
+    max-width: none;
+    background: var(--cream);
+  }
+  section.tinted .inner {
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+  p { margin-bottom: 1rem; }
+  p.lead {
+    font-size: 1.0625rem;
+    color: var(--text);
+    line-height: 1.75;
+  }
+  p.boilerplate {
+    background: var(--lavender-card);
+    padding: 1.5rem 1.75rem;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    color: var(--text);
+    border-left: 3px solid var(--purple);
+    margin-top: 1.5rem;
+  }
+
+  /* FACT SHEET */
+  .fact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 1.5rem;
+  }
+  .fact {
+    background: #FFFFFF;
+    padding: 1.5rem 1.5rem;
+  }
+  .fact-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--purple);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .fact-value {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.125rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .fact-value.small {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+
+  /* FOUNDER */
+  .founder-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-top: 1.5rem;
+  }
+  @media (max-width: 640px) {
+    .founder-grid { grid-template-columns: 1fr; }
+  }
+  .founder-photo img {
+    width : 200px;
+    height: 200px;
+    border-radius: 50%; 
+   overflow: hidden; 
+   object-position: center;  
+}
+  /* .founder-photo {
+    width: 200px;
+    height: 200px;
+    background: var(--lavender-card);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--purple);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.875rem;
+    text-align: center;
+    padding: 1rem;
+    border: 1px dashed var(--purple-light);
+  } */
+  .founder-info h3 { margin-bottom: 0.25rem; }
+  .founder-title {
+    font-size: 0.9rem;
+    color: var(--purple);
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+  .founder-bio { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; }
+
+  /* DOWNLOAD GRID (screenshots, logos) */
+  .download-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+  .download-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .download-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(123, 79, 158, 0.1);
+  }
+  .download-preview {
+    aspect-ratio: 9 / 16;
+    background: var(--lavender-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--purple);
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 1rem;
+  }
+  .download-preview.logo-preview {
+    aspect-ratio: 4 / 3;
+    background: var(--cream);
+  }
+  .download-preview.logo-preview img {
+    width : 300px;
+    height: 300px;
+    /* border-radius: 50%;  */
+   overflow: hidden; 
+   object-position: center; 
+}
+  .download-preview img {
+    width : 480px;
+    height: 480px;
+    /* border-radius: 50%;  */
+   overflow: hidden; 
+   object-position: center; 
+  }
+  .download-meta {
+    padding: 0.875rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+  }
+  .download-meta .name {
+    font-size: 0.85rem;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .download-meta .link {
+    font-size: 0.8rem;
+    color: var(--purple);
+    text-decoration: none;
+  }
+  .download-meta .link:hover { text-decoration: underline; }
+
+  /* BULK DOWNLOAD CTA */
+  .bulk-cta {
+    background: var(--purple);
+    color: #FFFFFF;
+    padding: 1.75rem 2rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  @media (max-width: 640px) {
+    .bulk-cta { flex-direction: column; text-align: center; }
+  }
+  .bulk-cta-text { font-family: 'Playfair Display', serif; font-size: 1.125rem; font-style: italic; }
+  .bulk-cta a {
+    background: #FFFFFF;
+    color: var(--purple);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+  }
+  .bulk-cta a:hover { background: var(--lavender-card); }
+
+  /* BRAND COLORS */
+  .palette {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .swatch {
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .swatch-color { height: 80px; }
+  .swatch-info { padding: 0.75rem 0.875rem; background: #FFFFFF; }
+  .swatch-name { font-size: 0.85rem; font-weight: 500; color: var(--text); }
+  .swatch-hex { font-size: 0.75rem; color: var(--text-muted); font-family: monospace; }
+
+  /* CONTACT */
+  .contact-box {
+    background: var(--lavender-bg);
+    padding: 2.5rem;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  .contact-box h3 {
+    font-style: italic;
+    margin-bottom: 0.75rem;
+  }
+  .contact-email {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--purple);
+    text-decoration: none;
+    margin: 0.5rem 0;
+    border-bottom: 1px solid var(--purple-light);
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+  }
+  .contact-email:hover { color: var(--purple-dark); }
+  .contact-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+  }
+
+  /* AS SEEN IN PLACEHOLDER */
+  .press-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  .press-logo-slot {
+    aspect-ratio: 16 / 9;
+    background: #FFFFFF;
+    border: 1px dashed var(--border);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--purple);
+    color: #FFFFFF;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+  footer p {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin: 0.25rem 0;
+  }
+  footer a {
+    color: #FFFFFF;
+    text-decoration: underline;
+  }
+   @media (max-width: 600px) {
+     .site-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+     .site-header nav a:first-child { margin-left: 0; }
+     .contact-cards { grid-template-columns: 1fr; }
+     .content-wrapper { padding: 0 1rem 3rem; }
+  }
+
+  /* HELPERS */
+  .pkg-note {
+    background: #FFF9E6;
+    border: 1px dashed #E5C547;
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    font-size: 0.85rem;
+    color: #6B5A1F;
+    margin: 1.5rem 0;
+  }
+  .pkg-note strong { color: #4A3D0F; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="brand">Ari's Closet</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+    <a href="press.html">Press</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">Press &amp; Media</div>
+  <h1>About Ari's Closet</h1>
+  <p class="hero-sub">A wardrobe app built for people who already love what's in their closet. Press resources, brand assets, and founder information — all in one place.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Overview</div>
+  <h2>About</h2>
+  <p class="lead">Ari's Closet is an iOS app that helps people manage their wardrobe, plan outfits, and discover their personal style. Photograph what you own, let AI organize it, and get outfit ideas built from your real closet — no fast fashion, just clothes you already love.</p>
+
+  <p class="boilerplate"><strong>Boilerplate (200 words):</strong> Ari's Closet is an iOS app for people who want to wear what they already own. 
+    You photograph the pieces in your wardrobe, and AI handles the rest — detecting categories, colors, and style automatically. 
+    From there, the app builds outfits from your real closet based on your style preferences, weather, occasion, and what you've worn recently. 
+    Built by a solo founder for her daughter Ari (yes, the app is named after a real person), the app comes from a simple frustration: closets full of clothes that never get worn because nothing comes together as an outfit. 
+    The goal isn't to make you buy more — it's to help you actually wear what you have, build a wardrobe that feels intentional, and stop standing in front of your closet at 7am wondering what to put on. 
+    Available on iOS with a free tier and Premium subscription. Anthropic Claude for AI-powered clothing detection. 
+    Founded in Tennessee. Currently in active development with new features rolling out regularly.</p>
+</section>
+
+<section class="tinted">
+  <div class="inner">
+    <div class="eyebrow">Quick Facts</div>
+    <h2>Fact Sheet</h2>
+
+    <div class="fact-grid">
+      <div class="fact">
+        <div class="fact-label">App Name</div>
+        <div class="fact-value">Ari's Closet</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Category</div>
+        <div class="fact-value small">Lifestyle / Fashion</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Platform</div>
+        <div class="fact-value small">iOS (iPhone)</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Founded</div>
+        <div class="fact-value small">2025</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Company</div>
+        <div class="fact-value small">Rose V LLC</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Headquarters</div>
+        <div class="fact-value small">Tennessee, USA</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Pricing</div>
+        <div class="fact-value small">Free / Premium $4.99 mo · $39.99 yr</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Trial</div>
+        <div class="fact-value small">3-day free trial on Premium</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Website</div>
+        <div class="fact-value small">ariscloset.app</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Built With</div>
+        <div class="fact-value small">React Native · Claude AI</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Team Size</div>
+        <div class="fact-value small">Solo founder</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Press Contact</div>
+        <div class="fact-value small">press@ariscloset.app</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">The Story</div>
+  <h2>Founder</h2>
+
+  <div class="founder-grid">
+    <div class="founder-photo"><img src="/img/founder.jpeg" alt="Founder"></div>
+    <div class="founder-info">
+      <h3>Rose V.</h3>
+      <div class="founder-title">Founder &amp; CEO, Rose V LLC</div>
+      <p class="founder-bio">Rose is the solo founder of Ari's Closet, an iOS app she built for and named after her teenage daughter. With a background in software development and technical implementation, she designed Ari's Closet to solve the everyday problem of standing in front of a closet full of clothes with nothing to wear. The app uses AI to detect and organize clothing, then generates outfits from your real wardrobe based on your personal style preferences. Based in Tennessee, she runs Rose V LLC and continues to ship new features regularly while working toward a broader launch.</p>
+    </div>
+  </div>
+</section>
+
+<section class="tinted">
+  <div class="inner">
+    <div class="eyebrow">Visuals</div>
+    <h2>App Screenshots</h2>
+    <p>High-resolution screenshots of Ari's Closet, available for editorial use. Please credit "Ari's Closet" when using.</p>
+
+
+    <div class="download-grid">
+      <div class="download-card">
+        <div class="download-preview"><img src="/img/home.png" alt="Home"></div>
+        <div class="download-meta">
+          <span class="name">Outfit Generator</span>
+          <a href="/img/home.png" class="link" download>Download PNG ↓</a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview"><img src="/img/wardrobe.png" alt="Wardrobe"></div>
+        <div class="download-meta">
+          <span class="name">My Wardrobe</span>
+          <a href="/img/wardrobe.png" class="link" download>Download PNG ↓</a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview"><img src="/img/AIStylist.jpeg" alt="AI Stylist"></div>
+        <div class="download-meta">
+          <span class="name">AI Stylist</span>
+          <a href="/img/AIStylist.jpeg" class="link" download>Download PNG ↓</a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview"><img src="/img/trip.jpeg" alt="Trip"></div>
+        <div class="download-meta">
+          <span class="name">Trip</span>
+          <a href="/img/trip.jpeg" class="link" download>Download PNG ↓</a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview"><img src="/img/profile.png" alt="Profile"></div>
+        <div class="download-meta">
+          <span class="name">Profile</span>
+          <a href="/img/profile.png" class="link" download>Download PNG ↓</a>
+        </div>
+      </div>
+      <div class="download-card">
+        <div class="download-preview"><img src="/img/savedOutfit.png" alt="Favorite"></div>
+        <div class="download-meta">
+          <span class="name">Favorites</span>
+          <a href="/img/savedOutfit.png" class="link" download>Download PNG ↓</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Brand</div>
+  <h2>Logos &amp; Brand Assets</h2>
+  <p>Official Ari's Closet logos in multiple formats. Please don't alter, recolor, or redraw the logo.</p>
+
+  <div class="download-grid">
+    <!-- <div class="download-card">
+      <div class="download-preview logo-preview">Wordmark<br>SVG</div>
+      <div class="download-meta">
+        <span class="name">Wordmark (SVG)</span>
+        <a href="#" class="link">Download ↓</a>
+      </div>
+    </div> -->
+    <!-- <div class="download-card">
+      <div class="download-preview logo-preview">Wordmark<br>PNG · transparent</div>
+      <div class="download-meta">
+        <span class="name">Wordmark (PNG)</span>
+        <a href="#" class="link">Download ↓</a>
+      </div>
+    </div> -->
+    <div class="download-card">
+      <div class="download-preview logo-preview"><img src="/img/appicon.jpeg" alt="App Icon"></div>
+      <div class="download-meta">
+        <span class="name">App Icon</span>
+        <a href="/img/appicon.jpeg" class="link" download>Download ↓</a>
+        
+      </div>
+    </div>
+    <!-- <div class="download-card">
+      <div class="download-preview logo-preview">Monogram "A"<br>SVG</div>
+      <div class="download-meta">
+        <span class="name">Monogram</span>
+        <a href="#" class="link">Download ↓</a>
+      </div>
+    </div> -->
+  </div>
+
+  <h3 style="margin-top:3rem;">Brand Colors</h3>
+  <div class="palette">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#7B4F9E;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Primary Purple</div>
+        <div class="swatch-hex">#7B4F9E</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F3F0F9;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Lavender</div>
+        <div class="swatch-hex">#F3F0F9</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F7F5F0;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Cream (iOS)</div>
+        <div class="swatch-hex">#F7F5F0</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#EDEAE4;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">Card (iOS)</div>
+        <div class="swatch-hex">#EDEAE4</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:3rem;">Typography</h3>
+  <p>Headings: <em>Playfair Display</em> (italic). Body: DM Sans. Decorative drop cap: <em style="font-family:'Parisienne',cursive;font-size:1.4em;">Parisienne</em>.</p>
+
+  <!-- <div class="bulk-cta">
+    <div class="bulk-cta-text">Need everything at once?</div>
+    <a href="#">Download full press kit (ZIP) ↓</a>
+  </div> -->
+</section>
+
+<section class="tinted">
+  <!-- <div class="inner">
+    <div class="eyebrow">Coverage</div>
+    <h2>As Seen In</h2>
+    <p style="color:var(--text-muted);">We're a young company and just getting started. Press mentions and features will appear here as we earn them.</p>
+
+    <div class="press-logos">
+      <div class="press-logo-slot">[Logo slot]</div>
+      <div class="press-logo-slot">[Logo slot]</div>
+      <div class="press-logo-slot">[Logo slot]</div>
+      <div class="press-logo-slot">[Logo slot]</div>
+    </div>
+  </div> -->
+</section>
+
+<section>
+  <div class="eyebrow">Get In Touch</div>
+  <h2>Press Inquiries</h2>
+
+  <div class="contact-box">
+    <h3>For interviews, quotes, or feature requests</h3>
+    <a href="mailto:press@ariscloset.app" class="contact-email">press@ariscloset.app</a>
+    <p class="contact-note">We aim to respond within 2 business days. For faster turnaround, mention your deadline in the subject line.</p>
+  </div>
+</section>
+
+<footer>
+  <p><a href="/">Ari's Closet</a> · An iOS app by Rose V LLC</p>
+  <p>© 2026 Rose V LLC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
