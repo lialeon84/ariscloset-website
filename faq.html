@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ · Ari's Closet</title>
+<meta name="description" content="Frequently asked questions about Ari's Closet, an iOS app for wardrobe management and AI-powered outfit planning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #7B4F9E;
+    --purple-dark: #5A3878;
+    --purple-light: #B89BCF;
+    --lavender-bg: #F3F0F9;
+    --lavender-card: #EAE3F2;
+    --cream: #FAF8F3;
+    --text: #2C2535;
+    --text-muted: #6B5C77;
+    --border: #DBD0E5;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: #FFFFFF;
+    line-height: 1.6;
+    font-weight: 400;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--purple);
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .site-header .brand {
+    color: #FFFFFF;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.75rem;
+    text-decoration: none;
+  }
+  .site-header .brand::first-letter {
+    font-family: 'Parisienne', cursive;
+    font-size: 1.6em;
+    padding-right: 0.05em;
+    color: #ffffff;
+    vertical-align: baseline;
+  }
+  .site-header nav a {
+    color: #F3F0F9;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-size: 0.9rem;
+  }
+  .site-header nav a:hover { opacity: 0.75; }
+
+  /* HERO */
+  .hero {
+    background: var(--lavender-bg);
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple);
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    color: var(--purple-dark);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  .hero h1::first-letter {
+    font-family: 'Parisienne', cursive;
+    font-size: 1.4em;
+    padding-right: 0.05em;
+  }
+  .hero-sub {
+    max-width: 580px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* SECTION */
+  section {
+    padding: 4rem 2rem;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  section.tinted {
+    max-width: none;
+    background: var(--cream);
+  }
+  section.tinted .inner {
+    max-width: 920px;
+    margin: 0 auto;
+  }
+  .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--purple);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+  }
+  p { margin-bottom: 1rem; }
+
+  /* TABLE OF CONTENTS */
+  .toc {
+    background: var(--lavender-card);
+    border-left: 3px solid var(--purple);
+    padding: 1.5rem 1.75rem;
+    border-radius: 4px;
+    margin-top: 1.5rem;
+  }
+  .toc-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--purple);
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+  .toc ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.5rem 1.5rem;
+  }
+  .toc a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+  .toc a:hover { color: var(--purple); text-decoration: underline; }
+
+  /* FAQ ITEMS */
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 0;
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-question {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    list-style: none;
+  }
+  .faq-question::-webkit-details-marker { display: none; }
+  .faq-question::after {
+    content: '+';
+    color: var(--purple);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  details[open] .faq-question::after {
+    content: '−';
+    transform: rotate(0deg);
+  }
+  .faq-answer {
+    color: var(--text-muted);
+    font-size: 0.975rem;
+    line-height: 1.75;
+    padding-top: 0.25rem;
+  }
+  .faq-answer p { margin-bottom: 0.75rem; }
+  .faq-answer p:last-child { margin-bottom: 0; }
+  .faq-answer a {
+    color: var(--purple);
+    text-decoration: none;
+    border-bottom: 1px solid var(--purple-light);
+  }
+  .faq-answer a:hover { color: var(--purple-dark); }
+  .faq-answer ul {
+    margin-left: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  .faq-answer li { margin-bottom: 0.35rem; }
+  .faq-answer code {
+    background: var(--lavender-bg);
+    padding: 0.15rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.875rem;
+    color: var(--purple-dark);
+  }
+
+  /* CONTACT */
+  .contact-box {
+    background: var(--lavender-bg);
+    padding: 2.5rem;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+  .contact-box h3 {
+    font-style: italic;
+    margin-bottom: 0.75rem;
+  }
+  .contact-email {
+    display: inline-block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--purple);
+    text-decoration: none;
+    margin: 0.5rem 0;
+    border-bottom: 1px solid var(--purple-light);
+    padding-bottom: 2px;
+    transition: color 0.2s ease;
+  }
+  .contact-email:hover { color: var(--purple-dark); }
+  .contact-note {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--purple);
+    color: #FFFFFF;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+  footer p {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    margin: 0.25rem 0;
+  }
+  footer a {
+    color: #FFFFFF;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 600px) {
+    .site-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .site-header nav a:first-child { margin-left: 0; }
+    .faq-question { font-size: 1.05rem; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="/" class="brand">Ari's Closet</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms &amp; Conditions</a>
+    <a href="press.html">Press</a>
+    <a href="faq.html">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">Help &amp; Support</div>
+  <h1>Frequently Asked Questions</h1>
+  <p class="hero-sub">Everything you need to know about using Ari's Closet — from getting started to managing your subscription.</p>
+</section>
+
+<section>
+  <div class="eyebrow">Quick Navigation</div>
+  <h2>Browse by Topic</h2>
+  <div class="toc">
+    <div class="toc-title">Jump to a section</div>
+    <ul>
+      <li><a href="#getting-started">Getting Started</a></li>
+      <li><a href="#features">Features &amp; AI</a></li>
+      <li><a href="#subscription">Subscription &amp; Billing</a></li>
+      <li><a href="#privacy">Privacy &amp; Data</a></li>
+      <li><a href="#account">Your Account</a></li>
+      <li><a href="#troubleshooting">Troubleshooting</a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="getting-started">
+  <div class="eyebrow">Basics</div>
+  <h2>Getting Started</h2>
+
+  <details class="faq-item">
+    <summary class="faq-question">What is Ari's Closet?</summary>
+    <div class="faq-answer">
+      <p>Ari's Closet is an iOS app that helps you manage your wardrobe and plan outfits using AI. You photograph the clothes you already own, and the app organizes them, detects colors and categories automatically, and generates outfit ideas based on your style preferences, the weather, and the occasion.</p>
+      <p>The goal isn't to make you buy more clothes — it's to help you wear what you already have.</p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">What devices does Ari's Closet work on?</summary>
+    <div class="faq-answer">
+      <p>Ari's Closet is currently available on iPhone (iOS). An iPad-optimized version and Android support may come in the future.</p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">How do I add clothes to my wardrobe?</summary>
+    <div class="faq-answer">
+      <p>Tap the add button in the Wardrobe tab, then either take a photo of the item or choose one from your photo library. The app automatically removes the background and uses AI to detect the category, color, formality, and other attributes. You can review and edit any of these details before saving.</p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">Do I need to photograph every single item I own?</summary>
+    <div class="faq-answer">
+      <p>No. Start with the pieces you actually wear and love. You can always add more later. The app gets more useful as you add items, but you don't need to inventory your entire closet on day one.</p>
+    </div>
+  </details>
+</section>
+
+<section class="tinted" id="features">
+  <div class="inner">
+    <div class="eyebrow">Smart Styling</div>
+    <h2>Features &amp; AI</h2>
+
+    <details class="faq-item">
+      <summary class="faq-question">How does the outfit generator work?</summary>
+      <div class="faq-answer">
+        <p>The outfit generator pulls from the items already in your wardrobe and suggests combinations based on your style preferences, the current weather, the formality of the occasion, and what works well together. You can favorite outfits you love or generate new ones with a tap.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-question">What does the AI Stylist do?</summary>
+      <div class="faq-answer">
+        <p>The AI Stylist is a Premium feature that gives you personalized outfit recommendations and styling advice based on your specific wardrobe and preferences. Suggestions are saved so you can come back to them later, and you can dismiss any you don't like.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-question">Can I plan outfits for a trip?</summary>
+      <div class="faq-answer">
+        <p>Yes. The Trip feature lets you plan outfits for a destination and date range. The app considers the weather forecast and trip purpose when generating suggestions, so you can pack with a real plan instead of guessing.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-question">How accurate is the AI clothing detection?</summary>
+      <div class="faq-answer">
+        <p>The AI does a good job with most everyday clothing, but it's not perfect. You can always edit the detected category, color, formality, season, and other attributes after a photo is added. Better information in means better outfit suggestions out.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-question">Can I edit an item after I've added it?</summary>
+      <div class="faq-answer">
+        <p>Yes. Tap any item in your wardrobe to open its details, then edit anything you'd like — category, color, formality, season, brand, notes, or even the photo itself.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="subscription">
+  <div class="eyebrow">Plans &amp; Pricing</div>
+  <h2>Subscription &amp; Billing</h2>
+
+  <details class="faq-item">
+    <summary class="faq-question">Is Ari's Closet free?</summary>
+    <div class="faq-answer">
+      <p>Yes, there's a free tier that lets you try out the core features. Premium unlocks the full experience, including the AI Stylist, unlimited outfit generation, and other advanced features.</p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">How much does Premium cost?</summary>
+    <div class="faq-answer">
+      <p>Premium is <strong>$4.99/month</strong> or <strong>$39.99/year</strong> (a savings of about 33% versus monthly). Both options include a <strong>3-day free trial</strong>, so you can try Premium before being charged.</p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">How do I cancel my subscription?</summary>
+    <div class="faq-answer">
+      <p>Subscriptions are managed through your Apple ID, not inside the app. To cancel:</p>
+      <ul>
+        <li>Open the <strong>Settings</strong> app on your iPhone</li>
+        <li>Tap your name at the top, then <strong>Subscriptions</strong></li>
+        <li>Find Ari's Closet and tap <strong>Cancel Subscription</strong></li>
+      </ul>
+      <p>You'll keep access to Premium until the end of your current billing period.</p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">Will I be charged after my free trial ends?</summary>
+    <div class="faq-answer">
+      <p>Yes, unless you cancel before the trial ends. Apple will charge the selected plan (monthly or yearly) at the end of your 3-day trial. You can cancel anytime during the trial through your iPhone's Settings to avoid being charged.</p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">I already paid for Premium on another device. How do I restore it?</summary>
+    <div class="faq-answer">
+      <p>Open the app, go to <strong>Profile</strong> or <strong>Settings</strong>, and tap <strong>Restore Purchases</strong>. Make sure you're signed into the same Apple ID you used to purchase Premium originally.</p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">Can I get a refund?</summary>
+    <div class="faq-answer">
+      <p>All purchases are processed through Apple, so refund requests go through them directly. Visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a>, sign in with your Apple ID, find Ari's Closet, and submit a refund request. Apple makes the final decision on refunds.</p>
+    </div>
+  </details>
+</section>
+
+<section class="tinted" id="privacy">
+  <div class="inner">
+    <div class="eyebrow">Your Data</div>
+    <h2>Privacy &amp; Data</h2>
+
+    <details class="faq-item">
+      <summary class="faq-question">What data does Ari's Closet collect?</summary>
+      <div class="faq-answer">
+        <p>We collect what's needed to make the app work: your account info (email, name), the photos and details of items you add to your wardrobe, your style preferences, and basic usage data. We don't sell your data to anyone.</p>
+        <p>For full details, see our <a href="privacy.html">Privacy Policy</a>.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-question">Are my wardrobe photos private?</summary>
+      <div class="faq-answer">
+        <p>Yes. Your wardrobe is private to your account. No other user can see your clothes, your outfits, or your profile information.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-question">Where are my photos stored?</summary>
+      <div class="faq-answer">
+        <p>Your photos are stored securely in our cloud storage (Supabase) so they're available across devices when you sign in. They're protected by row-level security, meaning only your account can access them.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-question">Does the AI see my photos?</summary>
+      <div class="faq-answer">
+        <p>When you add a clothing item, the photo is sent to Anthropic's Claude AI to detect attributes like category and color. Anthropic does not store or use these photos to train AI models. Background removal is handled by Remove.bg with the same standard.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="account">
+  <div class="eyebrow">Account Management</div>
+  <h2>Your Account</h2>
+
+  <details class="faq-item">
+    <summary class="faq-question">How do I change my password?</summary>
+    <div class="faq-answer">
+      <p>Go to <strong>Profile</strong> → <strong>Privacy Settings</strong> → <strong>Change Password</strong>. You'll need to enter your current password before setting a new one.</p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">I forgot my password. What do I do?</summary>
+    <div class="faq-answer">
+      <p>On the login screen, tap <strong>Forgot Password</strong> and enter your email address. We'll send you a link to reset it. Check your spam folder if you don't see the email within a few minutes.</p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">How do I update my profile information?</summary>
+    <div class="faq-answer">
+      <p>Go to <strong>Profile</strong> → <strong>Edit Profile</strong>. You can update your name, username, profile photo, and style preferences from there.</p>
+    </div>
+  </details>
+
+  <details class="faq-item">
+    <summary class="faq-question">How do I delete my account?</summary>
+    <div class="faq-answer">
+      <p>Go to <strong>Profile</strong> → <strong>Privacy Settings</strong> → <strong>Delete Account</strong>. This permanently removes your account, your wardrobe, your photos, and all related data. This action cannot be undone.</p>
+      <p>If you have an active Premium subscription, cancel it through Apple Settings before deleting your account to avoid future charges.</p>
+    </div>
+  </details>
+</section>
+
+<section class="tinted" id="troubleshooting">
+  <div class="inner">
+    <div class="eyebrow">Help</div>
+    <h2>Troubleshooting</h2>
+
+    <details class="faq-item">
+      <summary class="faq-question">The app won't let me add a photo. What's wrong?</summary>
+      <div class="faq-answer">
+        <p>Ari's Closet needs permission to access your camera and photo library. Check that permissions are enabled in your iPhone's <strong>Settings</strong> → <strong>Ari's Closet</strong>. If they're already on, try closing the app fully and reopening it.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-question">My Premium features aren't unlocking after I paid. What do I do?</summary>
+      <div class="faq-answer">
+        <p>First, try tapping <strong>Restore Purchases</strong> in the app. If that doesn't work, fully close the app (swipe up from the app switcher) and reopen it — this often refreshes your subscription status. If you still don't have access, email us at <a href="mailto:support@ariscloset.app">support@ariscloset.app</a> with your Apple ID email so we can investigate.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-question">The AI got the category or color wrong. Can I fix it?</summary>
+      <div class="faq-answer">
+        <p>Yes — tap the item in your wardrobe and edit any of the detected attributes manually. The AI gets things right most of the time but isn't perfect, especially for patterns, multi-color items, or unusual styles.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-question">An outfit suggestion doesn't make sense. Why?</summary>
+      <div class="faq-answer">
+        <p>Outfit quality depends on the variety in your wardrobe and how accurately each item is labeled. If suggestions feel off, check that your items have the right category, formality, and season tags. Adding more pieces usually improves results too.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-question">The app is slow or crashing. What can I try?</summary>
+      <div class="faq-answer">
+        <p>Try these in order:</p>
+        <ul>
+          <li>Fully close the app and reopen it</li>
+          <li>Make sure you're on the latest version of Ari's Closet from the App Store</li>
+          <li>Make sure your iPhone is on a recent version of iOS</li>
+          <li>Restart your iPhone</li>
+        </ul>
+        <p>If the problem continues, email <a href="mailto:support@ariscloset.app">support@ariscloset.app</a> with details about what you were doing when it happened.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary class="faq-question">I have a feature request or bug to report. How do I share it?</summary>
+      <div class="faq-answer">
+        <p>We love hearing from users. Email <a href="mailto:support@ariscloset.app">support@ariscloset.app</a> with as much detail as you can — screenshots are especially helpful for bugs. Ari's Closet is built by a solo founder, so your feedback directly shapes what gets built next.</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="eyebrow">Still Need Help?</div>
+  <h2>Contact Support</h2>
+
+  <div class="contact-box">
+    <h3>Can't find what you're looking for?</h3>
+    <a href="mailto:support@ariscloset.app" class="contact-email">support@ariscloset.app</a>
+    <p class="contact-note">We aim to respond within 2 business days. Include your account email and any screenshots if you're reporting a bug.</p>
+  </div>
+</section>
+
+<footer>
+  <p><a href="/">Ari's Closet</a> · An iOS app by Rose V LLC</p>
+  <p>© 2026 Rose V LLC. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
