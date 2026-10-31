@@ -46,4 +46,5 @@ Each line says what the app actually does; `privacy.html` must match.
   - AI Stylist: current suggestions kept until regenerated (which replaces them); checked-off suggestions permanently deleted 90 days after being checked off (KAN-198).
   - Account deletion removes everything immediately (rows + all photos).
   - Supabase Pro keeps daily database backups for ~7 days.
+- **In-app consent popup** (app `components/AiConsentModal.js`, strings `common.aiConsent.*`) summarizes the AI + background-removal lines above — keep its wording consistent with `privacy.html` (updated for app 1.3.9, KAN-200).
 - **Not collected:** advertising IDs, analytics/tracking SDKs, contacts, health data.
