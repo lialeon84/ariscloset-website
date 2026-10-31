@@ -199,14 +199,14 @@
 
     <p><strong>Sensitive Information.</strong> We do not process sensitive information.</p>
 
-    <p><strong>Payment Data.</strong> We may collect data necessary to process your payment if you choose to make purchases, such as your payment instrument number and the security code associated with your payment instrument. All payment data is handled and stored by <strong>Apple</strong> and <strong>RevenueCat</strong>. You may find their privacy notices here: <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank">https://www.apple.com/legal/privacy/en-ww/</a> and <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a>.</p>
+    <p><strong>Payment Data.</strong> We do not collect or see your payment card details. Purchases are processed by <strong>Apple</strong>, and <strong>RevenueCat</strong> tells us whether your subscription is active. You may find their privacy notices here: <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank">https://www.apple.com/legal/privacy/en-ww/</a> and <a href="https://www.revenuecat.com/privacy" target="_blank">https://www.revenuecat.com/privacy</a>.</p>
 
     <p><strong>Application Data.</strong> If you use our application, we also may collect the following information if you choose to provide us with access or permission:</p>
 
     <ul>
-        <li><em>Geolocation Information.</em> With your permission, the app reads your device's location to look up the current weather for outfit recommendations. The location is sent directly from your phone to our weather provider, Open-Meteo, and is not stored in your account. If you wish to change our access or permissions, you may do so in your device's settings.</li>
+        <li><em>Geolocation Information.</em> With your permission, the app reads your device's location to look up the weather for outfit recommendations (today's weather on the Home screen, or the forecast for a date you are planning in the Calendar). The location is sent directly from your phone to our weather provider, Open-Meteo, and is not stored in your account. If you wish to change our access or permissions, you may do so in your device's settings.</li>
         <li><em>Mobile Device Access.</em> We may request access or permission to certain features from your mobile device, including your device's camera and photo library. If you wish to change our access or permissions, you may do so in your device's settings.</li>
-        <li><em>Push Notifications.</em> We may request to send you push notifications regarding your account or certain features of the application. If you wish to opt out, you may turn them off in your device's settings.</li>
+        <li><em>Notifications.</em> We may ask permission to send you reminders (such as trip departures, packing reminders, and lent items). These reminders are scheduled on your device; we do not collect a push notification token. If you wish to opt out, you may turn them off in your device's settings.</li>
     </ul>
 
     <p><strong>IP Address at Sign-Up.</strong> When you open the sign-up screen and when your account is created, we check your device's IP address to determine your approximate region (country and U.S. state), because the Services are not available in certain U.S. states. The IP address is sent to our IP geolocation provider, ipgeolocation.io, for this lookup only. We do not save your IP address or the lookup result to your account; if sign-up is blocked, we log only the state code.</p>
@@ -246,11 +246,10 @@
         <li><strong>Anthropic, PBC</strong> (United States) — AI processing for outfit recommendations, trip packing lists, and tagging clothing photos (category, color, and other attributes). For tagging, we send a resized copy of the photo (about 1,024 pixels wide), not the full-size original. <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">anthropic.com/legal/privacy</a></li>
         <li><strong>RevenueCat, Inc.</strong> (United States) — Subscription management and entitlement verification. <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">revenuecat.com/privacy</a></li>
         <li><strong>Railway Corporation</strong> (United States) — Hosts our own background-removal server, used only as a fallback when on-device background removal is not possible and only with your consent. Photos are processed in memory and not stored. <a href="https://railway.com/legal/privacy" target="_blank" rel="noopener noreferrer">railway.com/legal/privacy</a></li>
-        <li><strong>Apple Inc.</strong> (United States) — App distribution, in-app purchase processing, and push notification delivery via Apple Push Notification service (APNs). <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank" rel="noopener noreferrer">apple.com/legal/privacy</a></li>
+        <li><strong>Apple Inc.</strong> (United States) — App distribution and in-app purchase processing. <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank" rel="noopener noreferrer">apple.com/legal/privacy</a></li>
         <li><strong>Resend (DigitalOcean Holdings, Inc.)</strong> (United States) — Transactional email delivery (account-related emails, subscription notices). <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">resend.com/legal/privacy-policy</a></li>
-        <li><strong>Open-Meteo</strong> (Switzerland) — Weather data for outfit recommendations and trip packing lists. For outfits on the Home screen, it receives your device's location directly from your phone. For trips, it receives the destination you enter, to find that place and its forecast. It does not receive your name, email, or account details. <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">open-meteo.com/en/terms</a></li>
+        <li><strong>Open-Meteo</strong> (Switzerland) — Weather data for outfit recommendations and trip packing lists. For outfits on the Home screen and outfit ideas in the Calendar, it receives your device's location directly from your phone. For trips, it receives the destination you enter, to find that place and its forecast. It does not receive your name, email, or account details. <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">open-meteo.com/en/terms</a></li>
         <li><strong>ipgeolocation.io</strong> — IP address lookup at sign-up to confirm the Services are available in your region. Receives your IP address only.</li>
-        <li><strong>Expo / Apple Push Notification service</strong> — Push notification delivery. Receives device push tokens, not the content of personal data.</li>
     </ul>
 
     <h3>Background Removal</h3>
@@ -282,6 +281,8 @@
         <li>A resized copy (about 1,024 pixels wide) of each clothing photo you add is sent to Anthropic's API to tag the item's category, color, and other attributes</li>
         <li>Wardrobe metadata (item names, categories, colors, formality, season) is sent for outfit and packing list generation</li>
         <li>Weather conditions, occasion preferences, and trip details (such as destination, dates, and purpose) are sent to inform recommendations and packing lists</li>
+        <li>Text you type to describe what you need, to ask for changes to a suggested outfit, or as packing notes (Premium features) is sent so the AI can follow your request. Please do not include sensitive personal details in these requests</li>
+        <li>If you change the app's language, your saved styling notes and trip notes are sent to be translated into that language</li>
     </ul>
 
     <p>Anthropic processes this information as our service provider and, per Anthropic's policies, does not use our API inputs to train its models. For more information, see Anthropic's privacy policy at <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">anthropic.com/legal/privacy</a>.</p>
@@ -326,7 +327,7 @@
             </tr>
             <tr>
                 <td>Clothing item photographs and metadata</td>
-                <td>For the duration of your account; deleted immediately upon account deletion. Items you mark for deletion are soft-deleted and hard-deleted after 7 days.</td>
+                <td>For the duration of your account; deleted immediately upon account deletion. Items you delete stay in Recently Deleted for 7 days, where you can restore them, and are then permanently deleted automatically.</td>
             </tr>
             <tr>
                 <td>Photos sent to our background-removal server (fallback only)</td>
@@ -342,7 +343,11 @@
             </tr>
             <tr>
                 <td>AI Stylist sessions and suggestions</td>
-                <td>90 days from generation, after which they are automatically purged.</td>
+                <td>Your current suggestions are kept until you generate new ones (which replaces them) or delete your account. Suggestions you check off are permanently deleted 90 days after you check them off.</td>
+            </tr>
+            <tr>
+                <td>Trips, packing lists, and planned outfits (including any request you typed for a trip day's outfit)</td>
+                <td>For the duration of your account; deleted immediately upon account deletion. Trips you delete can be restored for 30 days and are then permanently deleted automatically. Requests you type for today's outfits on the Home screen are kept only on your phone for that day.</td>
             </tr>
             <tr>
                 <td>Outfit feedback and favorites</td>
@@ -354,7 +359,7 @@
             </tr>
             <tr>
                 <td>Database backups</td>
-                <td>We do not currently maintain automated database backups. Deleted data is not retained in backup snapshots.</td>
+                <td>Our database provider (Supabase) keeps automatic daily backups for up to 7 days so we can recover from a technical failure. Data you delete may remain in these backups until they expire, after which it is gone. We do not use backups for any other purpose.</td>
             </tr>
             <tr>
                 <td>Email delivery logs</td>
