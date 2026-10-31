@@ -398,21 +398,25 @@
   }
 
   /* FOOTER */
-  footer {
-    background: var(--purple);
-    color: #FFFFFF;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    margin-top: 4rem;
+  .site-footer {
+      background-color: #7B4F9E;
+      color: #F3F0F9;
+      text-align: center;
+      padding: 1.25rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.6;
   }
-  footer p {
-    font-size: 0.85rem;
-    opacity: 0.85;
-    margin: 0.25rem 0;
+  .site-footer p {
+      margin: 0;
+      font-size: inherit;
+      color: inherit;
+      line-height: inherit;
   }
-  footer a {
-    color: #FFFFFF;
-    text-decoration: underline;
+  .site-footer a {
+      color: #F3F0F9;
+      text-decoration: underline;
+      margin: 0 0.5rem;
   }
    @media (max-width: 600px) {
      .site-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
@@ -527,8 +531,8 @@
   <div class="eyebrow">The Story</div>
   <h2>Founder</h2>
 
-  <div class="founder-grid">
-    <div class="founder-photo"><img src="/img/founder.jpeg" alt="Founder"></div>
+  <div class="founder-grid" style="grid-template-columns: 1fr;">
+    <!-- <div class="founder-photo"><img src="/img/founder.jpeg" alt="Founder"></div> -->
     <div class="founder-info">
       <h3>Rose V.</h3>
       <div class="founder-title">Founder &amp; CEO, Rose V LLC</div>
@@ -537,7 +541,7 @@
   </div>
 </section>
 
-<section class="tinted">
+<!-- <section class="tinted">
   <div class="inner">
     <div class="eyebrow">Visuals</div>
     <h2>App Screenshots</h2>
@@ -589,28 +593,28 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
-<section>
+<!-- <section>
   <div class="eyebrow">Brand</div>
   <h2>Logos &amp; Brand Assets</h2>
   <p>Official Ari's Closet logos in multiple formats. Please don't alter, recolor, or redraw the logo.</p>
 
   <div class="download-grid">
-    <!-- <div class="download-card">
+    <div class="download-card">
       <div class="download-preview logo-preview">Wordmark<br>SVG</div>
       <div class="download-meta">
         <span class="name">Wordmark (SVG)</span>
         <a href="#" class="link">Download ↓</a>
       </div>
-    </div> -->
-    <!-- <div class="download-card">
+    </div>
+    <div class="download-card">
       <div class="download-preview logo-preview">Wordmark<br>PNG · transparent</div>
       <div class="download-meta">
         <span class="name">Wordmark (PNG)</span>
         <a href="#" class="link">Download ↓</a>
       </div>
-    </div> -->
+    </div>
     <div class="download-card">
       <div class="download-preview logo-preview"><img src="/img/appicon.jpeg" alt="App Icon"></div>
       <div class="download-meta">
@@ -619,13 +623,13 @@
         
       </div>
     </div>
-    <!-- <div class="download-card">
+    <div class="download-card">
       <div class="download-preview logo-preview">Monogram "A"<br>SVG</div>
       <div class="download-meta">
         <span class="name">Monogram</span>
         <a href="#" class="link">Download ↓</a>
       </div>
-    </div> -->
+    </div>
   </div>
 
   <h3 style="margin-top:3rem;">Brand Colors</h3>
@@ -663,14 +667,14 @@
   <h3 style="margin-top:3rem;">Typography</h3>
   <p>Headings: <em>Playfair Display</em> (italic). Body: DM Sans. Decorative drop cap: <em style="font-family:'Parisienne',cursive;font-size:1.4em;">Parisienne</em>.</p>
 
-  <!-- <div class="bulk-cta">
+  <div class="bulk-cta">
     <div class="bulk-cta-text">Need everything at once?</div>
     <a href="#">Download full press kit (ZIP) ↓</a>
-  </div> -->
-</section>
+  </div>
+</section> -->
 
-<section class="tinted">
-  <!-- <div class="inner">
+<!-- <section class="tinted">
+  <div class="inner">
     <div class="eyebrow">Coverage</div>
     <h2>As Seen In</h2>
     <p style="color:var(--text-muted);">We're a young company and just getting started. Press mentions and features will appear here as we earn them.</p>
@@ -681,8 +685,8 @@
       <div class="press-logo-slot">[Logo slot]</div>
       <div class="press-logo-slot">[Logo slot]</div>
     </div>
-  </div> -->
-</section>
+  </div>
+</section> -->
 
 <section>
   <div class="eyebrow">Get In Touch</div>
@@ -695,9 +699,13 @@
   </div>
 </section>
 
-<footer>
-  <p><a href="/">Ari's Closet</a> · An iOS app by Rose V LLC</p>
-  <p>© 2026 Rose V LLC. All rights reserved.</p>
+<footer class="site-footer">
+    <p>Made with &#128156;</p>
+    <p>&copy; 2026 Rose V LLC &nbsp;|&nbsp;
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Contact</a>
+    </p>
 </footer>
 
 </body>

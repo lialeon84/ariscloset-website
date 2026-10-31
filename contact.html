@@ -81,6 +81,9 @@
             border-radius: 12px;
             padding: 1.75rem 1.5rem;
         }
+        .contact-card.wide {
+            grid-column: 1 / -1;
+        }
         .contact-card .icon {
             font-size: 1.5rem;
             margin-bottom: 0.6rem;
@@ -121,7 +124,15 @@
             color: #F3F0F9;
             text-align: center;
             padding: 1.25rem;
+            font-family: 'DM Sans', sans-serif;
             font-size: 0.85rem;
+            line-height: 1.6;
+        }
+        .site-footer p {
+            margin: 0;
+            font-size: inherit;
+            color: inherit;
+            line-height: inherit;
         }
         .site-footer a {
             color: #F3F0F9;
@@ -165,17 +176,17 @@
             <h3>Email</h3>
             <p><a href="mailto:support@ariscloset.app">support@ariscloset.app</a></p>
         </div>
-        <div class="contact-card">
+        <!-- <div class="contact-card">
             <div class="icon">📞</div>
             <h3>Phone</h3>
             <p><a href="tel:5099061788">509-906-1788</a></p>
-        </div>
+        </div> -->
         <div class="contact-card">
             <div class="icon">📬</div>
             <h3>Mailing Address</h3>
             <p>Rose V LLC<br>P.O. Box 421<br>Antioch, TN 37011<br>United States</p>
         </div>
-        <div class="contact-card">
+        <div class="contact-card wide">
             <div class="icon">🕐</div>
             <h3>Support Hours</h3>
             <p>We typically respond within 1–2 business days.</p>
@@ -189,6 +200,7 @@
 </div>
 
 <footer class="site-footer">
+    <p>Made with &#128156;</p>
     <p>&copy; 2026 Rose V LLC &nbsp;|&nbsp;
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>

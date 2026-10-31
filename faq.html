@@ -262,21 +262,25 @@
   }
 
   /* FOOTER */
-  footer {
-    background: var(--purple);
-    color: #FFFFFF;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    margin-top: 4rem;
+  .site-footer {
+      background-color: #7B4F9E;
+      color: #F3F0F9;
+      text-align: center;
+      padding: 1.25rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.85rem;
+      line-height: 1.6;
   }
-  footer p {
-    font-size: 0.85rem;
-    opacity: 0.85;
-    margin: 0.25rem 0;
+  .site-footer p {
+      margin: 0;
+      font-size: inherit;
+      color: inherit;
+      line-height: inherit;
   }
-  footer a {
-    color: #FFFFFF;
-    text-decoration: underline;
+  .site-footer a {
+      color: #F3F0F9;
+      text-decoration: underline;
+      margin: 0 0.5rem;
   }
 
   @media (max-width: 600px) {
@@ -475,7 +479,7 @@
     <details class="faq-item">
       <summary class="faq-question">Does the AI see my photos?</summary>
       <div class="faq-answer">
-        <p>When you add a clothing item, the photo is sent to Anthropic's Claude AI to detect attributes like category and color. Anthropic does not store or use these photos to train AI models. Background removal is handled by Remove.bg with the same standard.</p>
+        <p>When you add a clothing item, the photo is sent to Anthropic's Claude AI to detect attributes like category and color. Anthropic does not use these photos to train AI models. To tag the item, the app sends a resized copy of the photo, not the full-size original. Background removal happens on your phone using Apple's built-in Vision technology. Only if that isn't possible (for example, on iOS versions earlier than 17), and only with your consent, is the photo sent to our own background-removal server, which processes it and does not store it.</p>
       </div>
     </details>
   </div>
@@ -582,9 +586,13 @@
   </div>
 </section>
 
-<footer>
-  <p><a href="/">Ari's Closet</a> · An iOS app by Rose V LLC</p>
-  <p>© 2026 Rose V LLC. All rights reserved.</p>
+<footer class="site-footer">
+    <p>Made with &#128156;</p>
+    <p>&copy; 2026 Rose V LLC &nbsp;|&nbsp;
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="contact.html">Contact</a>
+    </p>
 </footer>
 
 </body>

@@ -86,14 +86,16 @@
             color: #F3F0F9;
             text-align: center;
             padding: 1.25rem;
+            font-family: 'DM Sans', sans-serif;
             font-size: 0.85rem;
+            line-height: 1.6;
         }
-         .site-footer p {
-            font-size: 0.85rem;
-            opacity: 0.85;
-            margin: 0.25rem 0;
-            color: #F3F0F9;
-         }
+        .site-footer p {
+            margin: 0;
+            font-size: inherit;
+            color: inherit;
+            line-height: inherit;
+        }
         .site-footer a {
             color: #F3F0F9;
             text-decoration: underline;
@@ -128,7 +130,7 @@
 <div class="content-wrapper">
 
     <h1>PRIVACY POLICY</h1>
-    <p class="subtitle"><strong>Last updated June 2, 2026</strong></p>
+    <p class="subtitle"><strong>Last updated October 31, 2026</strong></p>
 
     <p>This Privacy Notice for <strong>Rose V LLC</strong> (doing business as <strong>Ari's Closet</strong>) ("<strong>we</strong>," "<strong>us</strong>," or "<strong>our</strong>"), describes how and why we might access, collect, store, use, and/or share ("<strong>process</strong>") your personal information when you use our services ("<strong>Services</strong>"), including when you:</p>
 
@@ -202,10 +204,12 @@
     <p><strong>Application Data.</strong> If you use our application, we also may collect the following information if you choose to provide us with access or permission:</p>
 
     <ul>
-        <li><em>Geolocation Information.</em> We may request access or permission to track location-based information from your mobile device to provide certain location-based services. If you wish to change our access or permissions, you may do so in your device's settings.</li>
+        <li><em>Geolocation Information.</em> With your permission, the app reads your device's location to look up the current weather for outfit recommendations. The location is sent directly from your phone to our weather provider, Open-Meteo, and is not stored in your account. If you wish to change our access or permissions, you may do so in your device's settings.</li>
         <li><em>Mobile Device Access.</em> We may request access or permission to certain features from your mobile device, including your device's camera and photo library. If you wish to change our access or permissions, you may do so in your device's settings.</li>
         <li><em>Push Notifications.</em> We may request to send you push notifications regarding your account or certain features of the application. If you wish to opt out, you may turn them off in your device's settings.</li>
     </ul>
+
+    <p><strong>IP Address at Sign-Up.</strong> When you open the sign-up screen and when your account is created, we check your device's IP address to determine your approximate region (country and U.S. state), because the Services are not available in certain U.S. states. The IP address is sent to our IP geolocation provider, ipgeolocation.io, for this lookup only. We do not save your IP address or the lookup result to your account; if sign-up is blocked, we log only the state code.</p>
 
     <p>All personal information that you provide to us must be true, complete, and accurate, and you must notify us of any changes to such personal information.</p>
 
@@ -225,6 +229,7 @@
         <li><strong>To protect our Services.</strong> We may process your information as part of our efforts to keep our Services safe and secure, including fraud monitoring and prevention.</li>
         <li><strong>To evaluate and improve our Services, products, marketing, and your experience.</strong> We may process your information when we believe it is necessary to identify usage trends, determine the effectiveness of our promotional campaigns, and to evaluate and improve our Services, products, marketing, and your experience.</li>
         <li><strong>To identify usage trends.</strong> We may process information about how you use our Services to better understand how they are being used so we can improve them.</li>
+        <li><strong>To confirm the Services are available in your region.</strong> We process your IP address at sign-up to check that you are not in a region where the Services are unavailable, as described above.</li>
         <li><strong>To comply with our legal obligations.</strong> We may process your information to comply with our legal obligations, respond to legal requests, and exercise, establish, or defend our legal rights.</li>
     </ul>
 
@@ -237,14 +242,22 @@
     <h3>Service Providers We Use</h3>
 
     <ul>
-        <li><strong>Supabase, Inc.</strong> (United States) — Database hosting, authentication, and file storage for your wardrobe items and account data. <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">supabase.com/privacy</a></li>
-        <li><strong>Anthropic, PBC</strong> (United States) — AI processing for clothing detection, image analysis, and outfit recommendations. Photos and clothing metadata are sent to Anthropic's API for processing. <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">anthropic.com/legal/privacy</a></li>
+        <li><strong>Supabase, Inc.</strong> (United States) — Database hosting, authentication, and photo storage for your wardrobe items and account data. Supabase also runs our server functions, including the fallback for background removal described below. <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">supabase.com/privacy</a></li>
+        <li><strong>Anthropic, PBC</strong> (United States) — AI processing for outfit recommendations, trip packing lists, and tagging clothing photos (category, color, and other attributes). For tagging, we send a resized copy of the photo (about 1,024 pixels wide), not the full-size original. <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">anthropic.com/legal/privacy</a></li>
         <li><strong>RevenueCat, Inc.</strong> (United States) — Subscription management and entitlement verification. <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener noreferrer">revenuecat.com/privacy</a></li>
+        <li><strong>Railway Corporation</strong> (United States) — Hosts our own background-removal server, used only as a fallback when on-device background removal is not possible and only with your consent. Photos are processed in memory and not stored. <a href="https://railway.com/legal/privacy" target="_blank" rel="noopener noreferrer">railway.com/legal/privacy</a></li>
         <li><strong>Apple Inc.</strong> (United States) — App distribution, in-app purchase processing, and push notification delivery via Apple Push Notification service (APNs). <a href="https://www.apple.com/legal/privacy/en-ww/" target="_blank" rel="noopener noreferrer">apple.com/legal/privacy</a></li>
         <li><strong>Resend (DigitalOcean Holdings, Inc.)</strong> (United States) — Transactional email delivery (account-related emails, subscription notices). <a href="https://resend.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">resend.com/legal/privacy-policy</a></li>
-        <li><strong>OpenWeather Ltd.</strong> (United Kingdom) — Weather data for outfit recommendations. Receives approximate location only.</li>
+        <li><strong>Open-Meteo</strong> (Switzerland) — Weather data for outfit recommendations and trip packing lists. For outfits on the Home screen, it receives your device's location directly from your phone. For trips, it receives the destination you enter, to find that place and its forecast. It does not receive your name, email, or account details. <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">open-meteo.com/en/terms</a></li>
+        <li><strong>ipgeolocation.io</strong> — IP address lookup at sign-up to confirm the Services are available in your region. Receives your IP address only.</li>
         <li><strong>Expo / Apple Push Notification service</strong> — Push notification delivery. Receives device push tokens, not the content of personal data.</li>
     </ul>
+
+    <h3>Background Removal</h3>
+
+    <p>When you add a clothing photo, the app removes the background on your phone using Apple's built-in Vision technology. In that case, the photo does not leave your device for background removal.</p>
+
+    <p>If on-device removal is not possible (for example, on iOS versions earlier than 17, or when it cannot find the item in the photo), or if you tap "Try again" on a result, the app sends the photo to our own background-removal server instead. This happens only if you have agreed to the in-app AI consent prompt. The photo is processed in memory and returned to your phone; our server does not store it. If you have not given consent, the app keeps your original photo and nothing is sent.</p>
 
     <p>We do not sell or rent your personal information to third parties, and we do not share your personal information with advertisers or data brokers.</p>
 
@@ -266,9 +279,9 @@
     <p>We provide our AI Products through <strong>Anthropic, PBC</strong> (United States), the developer of Claude. When you use our AI features:</p>
 
     <ul>
-        <li>Photographs of clothing items you upload are sent to Anthropic's API for visual analysis</li>
-        <li>Wardrobe metadata (item categories, colors, formality, season) is sent for outfit generation</li>
-        <li>Weather conditions and occasion preferences are sent to inform recommendations</li>
+        <li>A resized copy (about 1,024 pixels wide) of each clothing photo you add is sent to Anthropic's API to tag the item's category, color, and other attributes</li>
+        <li>Wardrobe metadata (item names, categories, colors, formality, season) is sent for outfit and packing list generation</li>
+        <li>Weather conditions, occasion preferences, and trip details (such as destination, dates, and purpose) are sent to inform recommendations and packing lists</li>
     </ul>
 
     <p>Anthropic processes this information as our service provider and, per Anthropic's policies, does not use our API inputs to train its models. For more information, see Anthropic's privacy policy at <a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener noreferrer">anthropic.com/legal/privacy</a>.</p>
@@ -281,6 +294,7 @@
         <li>Clothing item detection and categorization from uploaded photographs</li>
         <li>Color analysis and palette mapping</li>
         <li>Outfit recommendations based on weather, occasion, and your wardrobe</li>
+        <li>Trip packing lists based on your destination's forecast, trip details, and your wardrobe</li>
         <li>Personalized styling suggestions based on your saved preferences</li>
     </ul>
 
@@ -290,7 +304,7 @@
 
     <h3>How to Opt Out</h3>
 
-    <p>You may stop using our AI features at any time. If you wish to delete your data from our AI processing pipeline, you can delete individual clothing items or your entire account from within the app. Note that AI processing is integral to our core outfit recommendation features, so opting out of AI processing while continuing to use the app is not currently supported.</p>
+    <p>When you add a clothing item, the app asks for your consent (if you have not already given it) before any photo is sent to Anthropic or to our background-removal server. If you choose "Not Now," you can still add clothing items: the background is removed on your phone when possible, and you fill in the item details yourself. You can also switch outfit generation to "Quick Outfit" mode in the app, which creates outfits on your phone without sending your wardrobe to Anthropic. You may stop using our AI features at any time, and you can delete individual clothing items or your entire account from within the app.</p>
 
     <h2 id="inforetain">5. HOW LONG DO WE KEEP YOUR INFORMATION?</h2>
 
@@ -313,6 +327,14 @@
             <tr>
                 <td>Clothing item photographs and metadata</td>
                 <td>For the duration of your account; deleted immediately upon account deletion. Items you mark for deletion are soft-deleted and hard-deleted after 7 days.</td>
+            </tr>
+            <tr>
+                <td>Photos sent to our background-removal server (fallback only)</td>
+                <td>Not stored. Processed in memory and returned to your phone.</td>
+            </tr>
+            <tr>
+                <td>IP address checked at sign-up</td>
+                <td>Not stored in your account. If sign-up is blocked, only the state code is logged.</td>
             </tr>
             <tr>
                 <td>Donation records (items you mark as donated)</td>
@@ -359,9 +381,11 @@
 
     <h3>Account Information</h3>
 
-    <p>If you would at any time like to review or change the information in your account or terminate your account, you can log in to your account settings and update your user account.</p>
+    <p>If you would at any time like to review or change the information in your account, you can log in to your account settings and update your user account.</p>
 
-    <p>Upon your request to terminate your account, we will deactivate or delete your account and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our legal terms and/or comply with applicable legal requirements.</p>
+    <p><strong>Deleting your account.</strong> You can delete your account at any time in the app under <strong>Profile</strong> → <strong>Privacy Settings</strong> → <strong>Delete Account</strong>. This permanently deletes your account, your clothing and profile photos, and all related data (wardrobe items, outfits, trips, AI Stylist history, and preferences) from our database and photo storage. Deleting your account does not cancel an active subscription, which is managed by Apple; cancel it in your Apple account settings to avoid future charges. Subscription records held by Apple and RevenueCat are governed by their own privacy policies.</p>
+
+    <p>Upon your request to terminate your account, we will delete your account and information from our active databases. However, we may retain some information in our files to prevent fraud, troubleshoot problems, assist with any investigations, enforce our legal terms and/or comply with applicable legal requirements.</p>
 
     <p>If you have questions or comments about your privacy rights, you may email us at <a href="mailto:support@ariscloset.app">support@ariscloset.app</a>.</p>
 
@@ -557,6 +581,14 @@
                 <td>Contract performance (Art. 6(1)(b))</td>
             </tr>
             <tr>
+                <td>Sending clothing photos to our background-removal server when on-device removal is not possible</td>
+                <td>Consent (Art. 6(1)(a)) — given through the in-app consent prompt</td>
+            </tr>
+            <tr>
+                <td>Checking your IP address at sign-up to confirm regional availability</td>
+                <td>Legitimate interests (Art. 6(1)(f)) — complying with laws in the regions where we operate</td>
+            </tr>
+            <tr>
                 <td>Sending marketing communications</td>
                 <td>Consent (Art. 6(1)(a)) — you may withdraw consent at any time</td>
             </tr>
@@ -581,7 +613,7 @@
 
     <h3>13.4 International Data Transfers</h3>
 
-    <p>Several of our service providers — including Supabase, Anthropic, RevenueCat, Apple, and Resend — are located in the United States. When we transfer your personal data outside the EEA, UK, or Switzerland, we rely on appropriate safeguards under the GDPR and UK GDPR, including the European Commission's Standard Contractual Clauses (SCCs) and, where applicable, the UK International Data Transfer Addendum to the SCCs. You may request a copy of these safeguards by contacting us at <a href="mailto:support@ariscloset.app">support@ariscloset.app</a>.</p>
+    <p>Several of our service providers — including Supabase, Anthropic, RevenueCat, Railway, Apple, and Resend — are located in the United States. Our weather provider, Open-Meteo, is located in Switzerland. When we transfer your personal data outside the EEA, UK, or Switzerland, we rely on appropriate safeguards under the GDPR and UK GDPR, including the European Commission's Standard Contractual Clauses (SCCs) and, where applicable, the UK International Data Transfer Addendum to the SCCs. You may request a copy of these safeguards by contacting us at <a href="mailto:support@ariscloset.app">support@ariscloset.app</a>.</p>
 
     <h3>13.5 Your Rights (Articles 15–22 GDPR)</h3>
 
@@ -643,6 +675,7 @@
 </div>
 
 <footer class="site-footer">
+    <p>Made with &#128156;</p>
     <p>&copy; 2026 Rose V LLC &nbsp;|&nbsp;
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms &amp; Conditions</a>
